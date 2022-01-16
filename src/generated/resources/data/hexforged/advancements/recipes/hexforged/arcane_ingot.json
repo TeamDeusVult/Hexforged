@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "hexforged:arcane_ingot"
+    ]
+  },
+  "criteria": {
+    "raw_hex_crystal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "hexforged:raw_hex_crystal"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hexforged:arcane_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "raw_hex_crystal",
+      "has_the_recipe"
+    ]
+  ]
+}

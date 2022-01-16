@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "hexforged:block/hex_extraction_unit"
+    }
+  }
+}

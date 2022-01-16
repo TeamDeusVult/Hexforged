@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "hexforged:arcane_plating"
+    ]
+  },
+  "criteria": {
+    "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3066/1555988261@702a4064": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "hexforged:raw_hex_crystal"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hexforged:arcane_plating"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3066/1555988261@702a4064",
+      "has_the_recipe"
+    ]
+  ]
+}

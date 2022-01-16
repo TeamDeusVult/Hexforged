@@ -1,0 +1,9 @@
+{
+  "block.hexforged.hex_extraction_unit": "\u0287\u0131u\u2229 uo\u0131\u0287\u0254\u0250\u0279\u0287x\u018E x\u01DDH",
+  "item.hexforged.arcane_ingot": "\u0287obuI \u01DDu\u0250\u0254\u0279\u2C6F",
+  "item.hexforged.arcane_plating": "bu\u0131\u0287\u0250\u05DF\u0500 \u01DDu\u0250\u0254\u0279\u2C6F",
+  "item.hexforged.pure_hex_crystal": "\u05DF\u0250\u0287s\u028E\u0279\u0186 x\u01DDH \u01DD\u0279n\u0500",
+  "item.hexforged.raw_hex_crystal": "\u05DF\u0250\u0287s\u028E\u0279\u0186 x\u01DDH \u028D\u0250\u1D1A",
+  "item.hexforged.refined_hex_crystal": "\u05DF\u0250\u0287s\u028E\u0279\u0186 x\u01DDH p\u01DDu\u0131\u025F\u01DD\u1D1A",
+  "itemGroup.hexforged": "p\u01DDb\u0279o\u025Fx\u01DDH"
+}

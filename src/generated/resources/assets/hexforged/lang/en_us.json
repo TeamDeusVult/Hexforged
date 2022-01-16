@@ -1,0 +1,9 @@
+{
+  "block.hexforged.hex_extraction_unit": "Hex Extraction Unit",
+  "item.hexforged.arcane_ingot": "Arcane Ingot",
+  "item.hexforged.arcane_plating": "Arcane Plating",
+  "item.hexforged.pure_hex_crystal": "Pure Hex Crystal",
+  "item.hexforged.raw_hex_crystal": "Raw Hex Crystal",
+  "item.hexforged.refined_hex_crystal": "Refined Hex Crystal",
+  "itemGroup.hexforged": "Hexforged"
+}

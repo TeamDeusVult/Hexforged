@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QDQ",
+    "D D",
+    "QDQ"
+  ],
+  "key": {
+    "Q": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "hexforged:raw_hex_crystal"
+    }
+  },
+  "result": {
+    "item": "hexforged:arcane_ingot"
+  }
+}

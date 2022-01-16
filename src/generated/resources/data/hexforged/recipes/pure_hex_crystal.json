@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "hexforged:refined_hex_crystal"
+    }
+  ],
+  "result": {
+    "item": "hexforged:pure_hex_crystal"
+  }
+}

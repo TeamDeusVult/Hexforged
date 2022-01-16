@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "hexforged:pure_hex_crystal"
+    ]
+  },
+  "criteria": {
+    "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3064/489924110@5e1c88ea": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "hexforged:refined_hex_crystal"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hexforged:pure_hex_crystal"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3064/489924110@5e1c88ea",
+      "has_the_recipe"
+    ]
+  ]
+}
