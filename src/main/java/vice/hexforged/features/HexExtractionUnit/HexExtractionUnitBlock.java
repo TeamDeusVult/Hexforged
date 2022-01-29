@@ -13,6 +13,9 @@ import net.minecraft.item.Items;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import software.bernie.geckolib3.core.IAnimatable;
 import vice.hexforged.Hexforged;
@@ -21,6 +24,7 @@ import vice.hexforged.registry.simple.RegisteredItems;
 import vice.hexforged.registry.util.RecipeHelper;
 import vice.hexforged.registry.util.RegistrateExtensions;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 @ExtensionMethod({ RegistrateExtensions.class})
@@ -68,5 +72,18 @@ public class HexExtractionUnitBlock extends DirectionalKineticBlock
     public Direction.Axis getRotationAxis(BlockState blockState)
     {
         return Direction.Axis.X;
+    }
+
+
+    @Override
+    @Nonnull
+    @SuppressWarnings("deprecation")
+    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+        return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 32.0D, 16.0D);
+    }
+
+    @Override
+    public BlockRegion getBlockSize() {
+        return new BlockRegion(1,2,1);
     }
 }

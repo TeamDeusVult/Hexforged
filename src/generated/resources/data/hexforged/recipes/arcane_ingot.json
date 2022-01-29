@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "QDQ",
+    "LDL",
     "D D",
-    "QDQ"
+    "LDL"
   ],
   "key": {
-    "Q": {
+    "L": {
       "item": "minecraft:gold_ingot"
     },
     "D": {

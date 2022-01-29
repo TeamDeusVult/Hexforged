@@ -1,6 +1,8 @@
 package vice.hexforged.client.renderers;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
+import com.simibubi.create.content.contraptions.base.KineticTileEntity;
 import com.simibubi.create.content.contraptions.base.KineticTileEntityRenderer;
 import lombok.val;
 import net.minecraft.block.BlockState;
@@ -26,7 +28,7 @@ import software.bernie.geckolib3.renderers.geo.IGeoRenderer;
 import java.awt.*;
 
 
-public class KineticGeoModelTileEntityRenderer<T extends TileEntity & IAnimatable>
+public class KineticGeoModelTileEntityRenderer<T extends KineticTileEntity & IAnimatable>
         extends KineticTileEntityRenderer
         implements IGeoRenderer<T>
 {
@@ -52,6 +54,7 @@ public class KineticGeoModelTileEntityRenderer<T extends TileEntity & IAnimatabl
         return null;
     }
 
+
     private final AnimatedGeoModel<T> modelProvider;
 
     public KineticGeoModelTileEntityRenderer(TileEntityRendererDispatcher rendererDispatcherIn, AnimatedGeoModel<T> modelProvider) {
@@ -59,8 +62,14 @@ public class KineticGeoModelTileEntityRenderer<T extends TileEntity & IAnimatabl
         this.modelProvider = modelProvider;
     }
 
+    @Override
+    protected void renderSafe(KineticTileEntity te, float partialTicks, MatrixStack ms, IRenderTypeBuffer buffer, int light, int overlay)
+    {
+        this.renderGecko((T) te, partialTicks, ms, buffer, light);
+        //super.renderSafe(te, partialTicks, ms, buffer, light, overlay);
+    }
 
-    public void render(T tile, float partialTicks, MatrixStack stack, IRenderTypeBuffer bufferIn, int packedLightIn) {
+    public void renderGecko(T tile, float partialTicks, MatrixStack stack, IRenderTypeBuffer bufferIn, int packedLightIn) {
         GeoModel model = modelProvider.getModel(modelProvider.getModelLocation(tile));
         modelProvider.setLivingAnimations(tile, this.getUniqueID(tile));
         stack.pushPose();

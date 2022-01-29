@@ -15,11 +15,13 @@ import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.util.Direction;
+import vice.hexforged.client.renderers.KineticGeoModelTileEntityRenderer;
+import vice.hexforged.features.HexExtractionUnit.HexExtractionUnitTileEntity;
 
-public class HexExtractionUnitKineticRenderer extends KineticTileEntityRenderer
+public class HexExtractionUnitKineticRenderer extends KineticGeoModelTileEntityRenderer<HexExtractionUnitTileEntity>
 {
     public HexExtractionUnitKineticRenderer(TileEntityRendererDispatcher dispatcher) {
-        super(dispatcher);
+        super(dispatcher, new HexExtractionUnitModel());
     }
 
     @Override
@@ -28,21 +30,23 @@ public class HexExtractionUnitKineticRenderer extends KineticTileEntityRenderer
     }
 
     @Override
-    protected void renderSafe(KineticTileEntity te, float partialTicks, MatrixStack ms, IRenderTypeBuffer buffer,
-                              int light, int overlay) {
+    protected void renderSafe(KineticTileEntity te, float partialTicks, MatrixStack ms, IRenderTypeBuffer buffer, int light, int overlay)
+    {
+        super.renderSafe(te, partialTicks, ms, buffer, light, overlay);
 
-        if (Backend.getInstance().canUseInstancing(te.getLevel())) return;
+        if (Backend.getInstance().canUseInstancing(te.getLevel()))
+            return;
 
         BlockState blockState = te.getBlockState();
-        MechanicalMixerTileEntity mixer = (MechanicalMixerTileEntity) te;
+        HexExtractionUnitTileEntity mixer = (HexExtractionUnitTileEntity) te;
 
         IVertexBuilder vb = buffer.getBuffer(RenderType.solid());
 
         SuperByteBuffer superBuffer = PartialBufferer.get(AllBlockPartials.SHAFTLESS_COGWHEEL, blockState);
         standardKineticRotationTransform(superBuffer, te, light).renderInto(ms, vb);
 
-        float renderedHeadOffset = mixer.getRenderedHeadOffset(partialTicks);
-        float speed = mixer.getRenderedHeadRotationSpeed(partialTicks);
+        float renderedHeadOffset = -2f;//mixer.getRenderedHeadOffset(partialTicks);
+        float speed = 5f;//mixer.getRenderedHeadRotationSpeed(partialTicks);
         float time = AnimationTickHolder.getRenderTime(te.getLevel());
         float angle = ((time * speed * 6 / 10f) % 360) / 180 * (float) Math.PI;
 

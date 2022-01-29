@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3066/1555988261@702a4064": {
+    "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3069/1944849939@702a4064": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3066/1555988261@702a4064",
+      "vice.hexforged.registry.simple.RegisteredItems$$Lambda$3069/1944849939@702a4064",
       "has_the_recipe"
     ]
   ]
